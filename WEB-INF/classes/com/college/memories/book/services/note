@@ -1,0 +1,7 @@
+0.All Common Static Methods which are connected to DATABASE available in CollegeBookCommons SerVlet So fetch them whenever needed.  
+1.we Suppose to store Same Name in all Tables and displays in all .jsP file, so we created one hashMap as Static(in loginDao) and added name in that MAP.
+2.Additional we need to Store same mobileNo in MessageDb so we Add mobileNo in same above hashMap and used in mobileController.
+3.In LoginDao class used Some tricky logic, So analysis it one by one.
+4.In MemoriesSnap servleT we suppose to store all snap details like snapName, UploadUserName etc..So its imp that snapID and SnapName must be unique, and both should've a relation
+  like so we are storing SnapId value +1 at last letter of SnapName to fetch it in later processing.
+  - Here we are adding +1 to 'last' SnapID, bcOz when user upload new snap then snapName last letter must be same as SnapID, so it's little bit Tricky analysis it properly.   	  	         

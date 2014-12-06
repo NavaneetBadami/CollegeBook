@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>CollegeBook</display-name>
+	
+	<!-- SMTP settings -->
+	<context-param>
+		<param-name>host</param-name>
+		<param-value>smtp.gmail.com</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>port</param-name>
+		<param-value>587</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>user</param-name>
+		<param-value>CollegeBook14@Gmail.com</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>pass</param-name>
+		<param-value>Navaneet89@</param-value>
+	</context-param>
+	
+	<!-- End of SMTP settings -->
+	
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<listener>   <!-- listener for current online user. -->
+		<listener-class>
+			com.college.memories.book.controller.LoginController
+		</listener-class>
+	</listener>
+	
+	<session-config>
+		<session-timeout>10</session-timeout>		
+	</session-config>
+	
+	<servlet>
+		<servlet-name>createAccountServlet</servlet-name>
+		<servlet-class>com.college.memories.book.controller.CreateAccountController</servlet-class>	
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>createAccountServlet</servlet-name>
+		<url-pattern>/createAccount</url-pattern>
+		</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>accountVerifyServlet</servlet-name>
+		<servlet-class>com.college.memories.book.controller.AccountVerifyController</servlet-class>	
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>accountVerifyServlet</servlet-name>
+		<url-pattern>/verifyAccount</url-pattern>
+		</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>reSendEmailVerifyCodeServlet</servlet-name>
+		<servlet-class>com.college.memories.book.others.ReSendVerificationCode</servlet-class>	
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>reSendEmailVerifyCodeServlet</servlet-name>
+		<url-pattern>/reSendVerifyCode</url-pattern>
+		</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>forgotUserNameOrPasswordServlet</servlet-name>
+		<servlet-class>com.college.memories.book.controller.ForgotUsernameOrPasswordController</servlet-class>	
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>forgotUserNameOrPasswordServlet</servlet-name>
+		<url-pattern>/forgetPasswordOrUsername</url-pattern>
+		</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>loginServlet</servlet-name>
+		<servlet-class>com.college.memories.book.controller.LoginController</servlet-class>
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>loginServlet</servlet-name>
+		<url-pattern>/login</url-pattern>
+		</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>profileCompleteServlet</servlet-name>
+		<servlet-class>com.college.memories.book.controller.CompleteController</servlet-class>
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>profileCompleteServlet</servlet-name>
+		<url-pattern>/profileComplete</url-pattern>	
+		</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>careerCompleteServlet</servlet-name>
+		<servlet-class>com.college.memories.book.controller.CareerController</servlet-class>
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>careerCompleteServlet</servlet-name>
+		<url-pattern>/careerComplete</url-pattern>	
+		</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>inboxServlets</servlet-name>
+		<servlet-class>com.college.memories.book.controller.InboxController</servlet-class>
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>inboxServlets</servlet-name>
+		<url-pattern>/inbox</url-pattern>
+		</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>updateProfileServlet</servlet-name>
+		<servlet-class>com.college.memories.book.controller.UpdateController</servlet-class>	
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>updateProfileServlet</servlet-name>
+		<url-pattern>/updateProfile</url-pattern>
+		</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>updateCareerServlet</servlet-name>
+		<servlet-class>com.college.memories.book.controller.UpdateCareerController</servlet-class>	
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>updateCareerServlet</servlet-name>
+		<url-pattern>/updateCareer</url-pattern>
+		</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>postServlet</servlet-name>
+		<servlet-class>com.college.memories.book.controller.PostsController</servlet-class>	
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>postServlet</servlet-name>
+		<url-pattern>/posts</url-pattern>
+		</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>messageServlet</servlet-name>
+		<servlet-class>com.college.memories.book.controller.MessageController</servlet-class>	
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>messageServlet</servlet-name>
+		<url-pattern>/message</url-pattern>
+		</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>searchServlet</servlet-name>
+		<servlet-class>com.college.memories.book.controller.SearchMemberController</servlet-class>	
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>searchServlet</servlet-name>
+		<url-pattern>/searchMember</url-pattern>
+		</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>friendProfileServlet</servlet-name>
+		<servlet-class>com.college.memories.book.controller.DisplayFriendController</servlet-class>	
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>friendProfileServlet</servlet-name>
+		<url-pattern>/friendProfile</url-pattern>
+		</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>deleteServlet</servlet-name>
+		<servlet-class>com.college.memories.book.controller.DeleteProfileController</servlet-class>	
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>deleteServlet</servlet-name>
+		<url-pattern>/deleteProfile</url-pattern>
+		</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>likecountServlet</servlet-name>
+		<servlet-class>com.college.memories.book.others.LikeCount</servlet-class>	
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>likecountServlet</servlet-name>
+		<url-pattern>/likeCount</url-pattern>
+		</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>shareServlet</servlet-name>
+		<servlet-class>com.college.memories.book.others.SharePost</servlet-class>	
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>shareServlet</servlet-name>
+		<url-pattern>/sharePost</url-pattern>
+		</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>profileImageServlet</servlet-name>
+		<servlet-class>com.college.memories.book.others.ProfileImage</servlet-class>	
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>profileImageServlet</servlet-name>
+		<url-pattern>/uploadProfileImage</url-pattern>
+		</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>albumPicture1</servlet-name>
+		<servlet-class>com.college.memories.book.others.AlbumPhoto1</servlet-class>	
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>albumPicture1</servlet-name>
+		<url-pattern>/albumImage1</url-pattern>
+		</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>albumPicture2</servlet-name>
+		<servlet-class>com.college.memories.book.others.AlbumPhoto2</servlet-class>	
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>albumPicture2</servlet-name>
+		<url-pattern>/albumImage2</url-pattern>
+		</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>albumPicture3</servlet-name>
+		<servlet-class>com.college.memories.book.others.AlbumPhoto3</servlet-class>	
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>albumPicture3</servlet-name>
+		<url-pattern>/albumImage3</url-pattern>
+		</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>albumPicture4</servlet-name>
+		<servlet-class>com.college.memories.book.others.AlbumPhoto4</servlet-class>	
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>albumPicture4</servlet-name>
+		<url-pattern>/albumImage4</url-pattern>
+		</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>coverPicture</servlet-name>
+		<servlet-class>com.college.memories.book.others.CoverImage</servlet-class>	
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>coverPicture</servlet-name>
+		<url-pattern>/coverImage</url-pattern>
+		</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>memoriesPhotos</servlet-name>
+		<servlet-class>com.college.memories.book.others.MemoriesSnaps</servlet-class>	
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>memoriesPhotos</servlet-name>
+		<url-pattern>/memoriesPhoto</url-pattern>
+		</servlet-mapping>
+</web-app>
